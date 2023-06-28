@@ -4,4 +4,7 @@
     <string name="title">Title</string>
     <string name="subtitle">Subtitle</string>
     <string name="floatingbtn">addBtn</string>
+    <string name="Delete">Delete</string>
+    <string name="Cancel">Cancel</string>
+
 </resources>

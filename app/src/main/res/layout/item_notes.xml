@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        app:cardBackgroundColor="@color/etbgcolor"
+        app:cardCornerRadius="10dp">
+        <View
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:background="@drawable/yellow_dot"
+            android:layout_gravity="right"
+
+            android:layout_margin="10dp"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/app_name"
+                android:textSize="16sp"
+                android:maxLines="1"
+                android:layout_marginBottom="2dp"
+                android:fontFamily="@font/poppins_semibold"
+                android:textColor="@color/mainColor"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="jksgdfhsidfjil suadiofuisdhfjkshdjkfhsjadhfioshadiofhjiosdhfjkhgsadijfhgsjkdhgfijasdhiuofyasiudhfjksdhfjkagsdjkfhgasdiuohfjksadhgfjhasgdhjfgasdjkfhgsjkadhgfjkasdhgfjksahgdjkfgasdjkfhgasjkdhgfjkasdhgjkfgasjkd"
+                android:textColor="@color/notesmaincolor"
+                android:textSize="14sp"
+                android:layout_marginBottom="2dp"
+                android:fontFamily="@font/poppins_light"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_semibold"
+                android:textSize="16sp"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/mainColor"
+                android:text="28 June 2023"/>
+
+        </LinearLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+
+</androidx.appcompat.widget.LinearLayoutCompat>

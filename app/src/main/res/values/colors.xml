@@ -9,5 +9,8 @@
     <color name="red_dot">#ff0000</color>
     <color name="blue_dot">#00C4FF</color>
     <color name="yellow_dot">#FFFF00</color>
+    <color name="notesmaincolor">#F99B7D</color>
+    <color name="cancelbtn">#7e839f</color>
+    <color name="deleteBtn">#fd7a75</color>
 
 </resources>

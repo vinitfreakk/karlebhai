@@ -12,7 +12,9 @@
         tools:layout="@layout/fragment_home" >
         <action
             android:id="@+id/action_homeFragment_to_createNotesFragment"
-            app:destination="@id/createNotesFragment" />
+            app:destination="@id/createNotesFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_in_left" />
         <action
             android:id="@+id/action_homeFragment_to_editFragment"
             app:destination="@id/editFragment" />

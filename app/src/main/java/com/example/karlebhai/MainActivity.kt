@@ -1,7 +1,9 @@
 package com.example.karlebhai
 
-import androidx.appcompat.app.AppCompatActivity
+import android.graphics.Color
 import android.os.Bundle
+import androidx.appcompat.app.ActionBar
+import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupActionBarWithNavController
@@ -13,7 +15,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-         navController = findNavController(R.id.fragmentContainerView) // got the navigation controller here
+
+        navController = findNavController(R.id.fragmentContainerView) // got the navigation controller here
 
         setupActionBarWithNavController(navController)
     }

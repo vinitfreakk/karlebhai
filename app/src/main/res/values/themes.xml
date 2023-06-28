@@ -1,10 +1,13 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Base.Theme.KarLeBhai" parent="Theme.Material3.DayNight">
+    <style name="Base.Theme.KarLeBhai" parent="Theme.MaterialComponents.DayNight">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="colorPrimary">@color/mainColor</item>
+        <item name="android:textColorPrimary">@color/white</item>
         <item name="android:statusBarColor">@color/mainColor</item>
         <item name="actionBarSize">48dp</item>
+
 
 
     </style>

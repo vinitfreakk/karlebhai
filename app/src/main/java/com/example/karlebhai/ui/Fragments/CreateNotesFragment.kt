@@ -5,9 +5,11 @@ import android.text.format.DateFormat
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.lifecycleScope
 import com.example.karlebhai.Models.Notes
 import com.example.karlebhai.R
 import com.example.karlebhai.ViewModel.NotesViewModel
@@ -82,8 +84,9 @@ class CreateNotesFragment : Fragment() {
 
         val data = Notes(id = null, title, subTitle, notes, s.toString(), priority)
 
-        GlobalScope.launch {
+        lifecycleScope.launch{
             viewModel.addNotes(data)
+            Toast.makeText(context, "Note Added", Toast.LENGTH_SHORT).show()
         }
 
 

@@ -1,17 +1,22 @@
 
 package com.example.karlebhai.ui.Fragments
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.viewModels
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
 import com.example.karlebhai.R
+import com.example.karlebhai.ViewModel.NotesViewModel
 import com.example.karlebhai.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {
     lateinit var binding: FragmentHomeBinding
+    val viewModel: NotesViewModel by viewModels()  /*by viewModels() delegates the creation of the NotesViewModel instance to the viewModels() function.*/
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -19,6 +24,9 @@ class HomeFragment : Fragment() {
         // Inflate the layout for this fragment
         binding = FragmentHomeBinding.inflate(layoutInflater, container, false)
 
+        viewModel.getNotes().observe(viewLifecycleOwner,{
+            Log.d("data", "onCreateView: "+it.toString())
+        })
 
         binding.btnAddNotes.setOnClickListener {
             Navigation.findNavController(it)

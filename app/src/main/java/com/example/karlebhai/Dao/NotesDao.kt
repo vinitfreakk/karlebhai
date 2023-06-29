@@ -31,7 +31,7 @@ interface NotesDao {
     fun getNotes():LiveData<List<Notes>>
 
     @Query("DELETE FROM Notes Where id=:id")
-    fun deleteNotes(id:Int)
+    suspend fun deleteNotes(id:Int)
 
     @Update
     suspend fun updateNotes(notes: Notes)

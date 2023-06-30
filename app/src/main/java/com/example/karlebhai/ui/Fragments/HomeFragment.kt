@@ -1,5 +1,5 @@
-
 package com.example.karlebhai.ui.Fragments
+
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -9,9 +9,11 @@ import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.GridLayoutManager
 import com.example.karlebhai.R
 import com.example.karlebhai.ViewModel.NotesViewModel
 import com.example.karlebhai.databinding.FragmentHomeBinding
+import com.example.karlebhai.ui.Adapters.NotesAdapters
 
 class HomeFragment : Fragment() {
     lateinit var binding: FragmentHomeBinding
@@ -24,8 +26,9 @@ class HomeFragment : Fragment() {
         // Inflate the layout for this fragment
         binding = FragmentHomeBinding.inflate(layoutInflater, container, false)
 
-        viewModel.getNotes().observe(viewLifecycleOwner,{
-            Log.d("data", "onCreateView: "+it.toString())
+        viewModel.getNotes().observe(viewLifecycleOwner, { notesList ->
+            binding.notesRecyclerView.layoutManager = GridLayoutManager(requireContext(), 2)
+            binding.notesRecyclerView.adapter = NotesAdapters(requireContext(), notesList)
         })
 
         binding.btnAddNotes.setOnClickListener {

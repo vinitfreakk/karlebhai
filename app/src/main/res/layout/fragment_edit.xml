@@ -79,6 +79,7 @@
             app:layout_constraintTop_toBottomOf="@+id/editSubtitle">
 
             <ImageView
+                android:id="@+id/pRed"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:layout_marginStart="5dp"
@@ -86,6 +87,7 @@
                 android:background="@drawable/red_dot" />
 
             <ImageView
+                android:id="@+id/pYellow"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:layout_marginStart="5dp"
@@ -93,6 +95,7 @@
                 android:background="@drawable/yellow_dot" />
 
             <ImageView
+                android:id="@+id/pGreen"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:layout_marginStart="5dp"
@@ -110,6 +113,7 @@
             android:layout_marginEnd="10dp"
             android:background="@drawable/etbg"
             android:elevation="10dp"
+            android:textColor="@color/black"
             android:gravity="top"
             android:hint="note"
             android:overScrollMode="always"

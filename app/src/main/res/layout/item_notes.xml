@@ -11,6 +11,7 @@
         app:cardBackgroundColor="@color/etbgcolor"
         app:cardCornerRadius="10dp">
         <View
+            android:id="@+id/notesPriority"
             android:layout_width="20dp"
             android:layout_height="20dp"
             android:background="@drawable/yellow_dot"
@@ -23,6 +24,7 @@
             android:layout_margin="10dp"
             android:orientation="vertical">
             <TextView
+                android:id="@+id/notesTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/app_name"
@@ -33,6 +35,7 @@
                 android:textColor="@color/mainColor"/>
 
             <TextView
+                android:id="@+id/notesSubtitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="jksgdfhsidfjil suadiofuisdhfjkshdjkfhsjadhfioshadiofhjiosdhfjkhgsadijfhgsjkdhgfijasdhiuofyasiudhfjksdhfjkagsdjkfhgasdiuohfjksadhgfjhasgdhjfgasdjkfhgsjkadhgfjkasdhgfjksahgdjkfgasdjkfhgasjkdhgfjkasdhgjkfgasjkd"
@@ -42,6 +45,7 @@
                 android:fontFamily="@font/poppins_light"/>
 
             <TextView
+                android:id="@+id/notesDate"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/poppins_semibold"

@@ -12,5 +12,7 @@
     <color name="notesmaincolor">#F99B7D</color>
     <color name="cancelbtn">#7e839f</color>
     <color name="deleteBtn">#fd7a75</color>
+    <color name="filtertext">#FFFFFFFF</color>
+    <color name="yellowtext">#EDED28</color>
 
 </resources>

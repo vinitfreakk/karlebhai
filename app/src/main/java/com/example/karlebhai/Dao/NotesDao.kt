@@ -30,6 +30,17 @@ interface NotesDao {
     @Query("SELECT * FROM Notes")
     fun getNotes():LiveData<List<Notes>>
 
+    @Query("SELECT * FROM Notes WHERE priority=3")
+    fun getHighPriority():LiveData<List<Notes>>
+
+    @Query("SELECT * FROM Notes WHERE priority=2")
+    fun getMediumPriority():LiveData<List<Notes>>
+
+    @Query("SELECT * FROM Notes WHERE priority=1")
+    fun getLowPriority():LiveData<List<Notes>>
+
+
+
     @Query("DELETE FROM Notes Where id=:id")
     suspend fun deleteNotes(id:Int)
 

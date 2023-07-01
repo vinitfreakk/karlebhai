@@ -31,6 +31,7 @@ class HomeFragment : Fragment() {
             binding.notesRecyclerView.adapter = NotesAdapters(requireContext(), notesList)
         })
 
+
         binding.btnAddNotes.setOnClickListener {
             Navigation.findNavController(it)
                 .navigate(R.id.action_homeFragment_to_createNotesFragment)  //"This is the view that was clicked, help me navigate based on it!"
@@ -64,7 +65,36 @@ So, in simple terms, when you click the button, the Fragment (car) uses Navigati
 
         }
 
+        binding.allNotes.setOnClickListener {
+            viewModel.getNotes().observe(viewLifecycleOwner, { notesList ->
+                binding.notesRecyclerView.layoutManager = GridLayoutManager(requireContext(), 2)
+                binding.notesRecyclerView.adapter = NotesAdapters(requireContext(), notesList)
+            })
+        }
 
+
+
+        binding.highPriority.setOnClickListener {
+            viewModel.getHighNotes().observe(viewLifecycleOwner, { notesList ->
+                binding.notesRecyclerView.layoutManager = GridLayoutManager(requireContext(), 2)
+                binding.notesRecyclerView.adapter = NotesAdapters(requireContext(), notesList)
+            })
+        }
+
+        binding.lowPriority.setOnClickListener {
+            viewModel.getLowNotes().observe(viewLifecycleOwner, { notesList ->
+                binding.notesRecyclerView.layoutManager = GridLayoutManager(requireContext(), 2)
+                binding.notesRecyclerView.adapter = NotesAdapters(requireContext(), notesList)
+            })
+
+        }
+
+        binding.mediumPriority.setOnClickListener {
+            viewModel.getMediumNotes().observe(viewLifecycleOwner, { notesList ->
+                binding.notesRecyclerView.layoutManager = GridLayoutManager(requireContext(), 2)
+                binding.notesRecyclerView.adapter = NotesAdapters(requireContext(), notesList)
+            })
+        }
 
 
 

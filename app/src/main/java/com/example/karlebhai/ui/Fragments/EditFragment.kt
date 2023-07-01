@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
@@ -15,6 +16,8 @@ import com.example.karlebhai.Models.Notes
 import com.example.karlebhai.R
 import com.example.karlebhai.ViewModel.NotesViewModel
 import com.example.karlebhai.databinding.FragmentEditBinding
+import com.google.android.material.bottomsheet.BottomSheetDialog
+import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import java.util.Date
 
@@ -82,9 +85,28 @@ class EditFragment : Fragment() {
         }
 
 
+        binding.deleteNote.setOnClickListener {
+            val bottomSheet:BottomSheetDialog = BottomSheetDialog(requireContext())
+            bottomSheet.setContentView(R.layout.delete_dialog_box)
+            val cancel = bottomSheet.findViewById<TextView>(R.id.cancel)
+            val delete = bottomSheet.findViewById<TextView>(R.id.delete)
+            val navigate = Navigation.findNavController(it)
 
+            cancel?.setOnClickListener {
+                bottomSheet.dismiss()
+            }
 
+            delete?.setOnClickListener {
+                GlobalScope.launch {
+                    viewModel.deleteNote(pastNotes.data.id!!)
+                }
 
+                navigate.navigate(R.id.action_editFragment_to_homeFragment)
+                bottomSheet.dismiss()
+            }
+            bottomSheet.show()
+
+        }
         return binding.root
     }
 

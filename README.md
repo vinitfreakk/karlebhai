@@ -1,5 +1,5 @@
 # make_your_notes
-This notes app is built using MVVM, ROOM DB, Navigation component, .Coroutines.
+This notes app is built using MVVM, ROOM DB, Navigation component, Coroutines.
 
 Preview😜
 

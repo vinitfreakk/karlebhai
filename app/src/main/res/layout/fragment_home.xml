@@ -36,6 +36,7 @@
             android:background="@drawable/etbg"
             app:iconifiedByDefault="false"
             app:queryHint="Search"
+            android:visibility="gone"
             android:theme="@style/ThemeOverlay.SearchView"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView2" />

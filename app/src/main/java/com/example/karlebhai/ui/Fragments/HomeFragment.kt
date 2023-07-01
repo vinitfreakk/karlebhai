@@ -1,15 +1,16 @@
 package com.example.karlebhai.ui.Fragments
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.viewModels
 import androidx.navigation.Navigation
-import androidx.navigation.fragment.findNavController
-import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.StaggeredGridLayoutManager
+import com.example.karlebhai.Models.Notes
 import com.example.karlebhai.R
 import com.example.karlebhai.ViewModel.NotesViewModel
 import com.example.karlebhai.databinding.FragmentHomeBinding
@@ -18,7 +19,6 @@ import com.example.karlebhai.ui.Adapters.NotesAdapters
 class HomeFragment : Fragment() {
     lateinit var binding: FragmentHomeBinding
     val viewModel: NotesViewModel by viewModels()  /*by viewModels() delegates the creation of the NotesViewModel instance to the viewModels() function.*/
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -26,8 +26,11 @@ class HomeFragment : Fragment() {
         // Inflate the layout for this fragment
         binding = FragmentHomeBinding.inflate(layoutInflater, container, false)
 
+
+
         viewModel.getNotes().observe(viewLifecycleOwner, { notesList ->
-            binding.notesRecyclerView.layoutManager = GridLayoutManager(requireContext(), 2)
+            val staggeredGridLayoutManager = StaggeredGridLayoutManager(2,LinearLayoutManager.VERTICAL)
+            binding.notesRecyclerView.layoutManager = staggeredGridLayoutManager
             binding.notesRecyclerView.adapter = NotesAdapters(requireContext(), notesList)
         })
 
@@ -67,7 +70,8 @@ So, in simple terms, when you click the button, the Fragment (car) uses Navigati
 
         binding.allNotes.setOnClickListener {
             viewModel.getNotes().observe(viewLifecycleOwner, { notesList ->
-                binding.notesRecyclerView.layoutManager = GridLayoutManager(requireContext(), 2)
+                val staggeredGridLayoutManager = StaggeredGridLayoutManager(2,LinearLayoutManager.VERTICAL)
+                binding.notesRecyclerView.layoutManager = staggeredGridLayoutManager
                 binding.notesRecyclerView.adapter = NotesAdapters(requireContext(), notesList)
             })
         }
@@ -76,14 +80,16 @@ So, in simple terms, when you click the button, the Fragment (car) uses Navigati
 
         binding.highPriority.setOnClickListener {
             viewModel.getHighNotes().observe(viewLifecycleOwner, { notesList ->
-                binding.notesRecyclerView.layoutManager = GridLayoutManager(requireContext(), 2)
+                val staggeredGridLayoutManager = StaggeredGridLayoutManager(2,LinearLayoutManager.VERTICAL)
+                binding.notesRecyclerView.layoutManager = staggeredGridLayoutManager
                 binding.notesRecyclerView.adapter = NotesAdapters(requireContext(), notesList)
             })
         }
 
         binding.lowPriority.setOnClickListener {
             viewModel.getLowNotes().observe(viewLifecycleOwner, { notesList ->
-                binding.notesRecyclerView.layoutManager = GridLayoutManager(requireContext(), 2)
+                val staggeredGridLayoutManager = StaggeredGridLayoutManager(2,LinearLayoutManager.VERTICAL)
+                binding.notesRecyclerView.layoutManager = staggeredGridLayoutManager
                 binding.notesRecyclerView.adapter = NotesAdapters(requireContext(), notesList)
             })
 
@@ -91,10 +97,13 @@ So, in simple terms, when you click the button, the Fragment (car) uses Navigati
 
         binding.mediumPriority.setOnClickListener {
             viewModel.getMediumNotes().observe(viewLifecycleOwner, { notesList ->
-                binding.notesRecyclerView.layoutManager = GridLayoutManager(requireContext(), 2)
+                val staggeredGridLayoutManager = StaggeredGridLayoutManager(2,LinearLayoutManager.VERTICAL)
+                binding.notesRecyclerView.layoutManager = staggeredGridLayoutManager
                 binding.notesRecyclerView.adapter = NotesAdapters(requireContext(), notesList)
             })
         }
+
+
 
 
 
@@ -103,6 +112,8 @@ So, in simple terms, when you click the button, the Fragment (car) uses Navigati
 
         return binding.root
     }
+
+
 
 
 }

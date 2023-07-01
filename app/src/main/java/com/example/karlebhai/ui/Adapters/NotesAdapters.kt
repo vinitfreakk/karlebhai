@@ -1,20 +1,21 @@
 package com.example.karlebhai.ui.Adapters
 
 import android.content.Context
-import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.navigation.Navigation
-import androidx.navigation.fragment.NavHostFragment.Companion.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.karlebhai.Models.Notes
 import com.example.karlebhai.R
 import com.example.karlebhai.databinding.ItemNotesBinding
 import com.example.karlebhai.ui.Fragments.HomeFragmentDirections
 
-class NotesAdapters(val requireContext: Context,val notesList: List<Notes>):RecyclerView.Adapter<NotesAdapters.notesVieHolder>() {
+class NotesAdapters(val requireContext: Context,var notesList: List<Notes>):RecyclerView.Adapter<NotesAdapters.notesVieHolder>() {
 
-
+    fun searchNotes(filterdList: ArrayList<Notes>) {
+        notesList=filterdList
+        notifyDataSetChanged()
+    }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): notesVieHolder {
        return notesVieHolder(ItemNotesBinding.inflate(LayoutInflater.from(parent.context),parent,false))
     }
@@ -48,6 +49,7 @@ class NotesAdapters(val requireContext: Context,val notesList: List<Notes>):Recy
     }
 
     inner class notesVieHolder(val binding: ItemNotesBinding): RecyclerView.ViewHolder(binding.root)
+
 
 
 }

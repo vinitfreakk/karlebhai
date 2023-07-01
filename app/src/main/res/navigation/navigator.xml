@@ -26,6 +26,56 @@
         tools:layout="@layout/fragment_edit" >
         <action
             android:id="@+id/action_editFragment_to_homeFragment"
+            app:popUpTo="@+id/homeFragment"
+            app:popUpToInclusive="true"
+            app:destination="@id/homeFragment" />
+        <argument
+            android:name="data"
+            app:argType="com.example.karlebhai.Models.Notes" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/createNotesFragment"
+        android:name="com.example.karlebhai.ui.Fragments.CreateNotesFragment"
+        android:label="fragment_create_notes_fragments"
+        tools:layout="@layout/fragment_create_notes_fragments" >
+        <action
+            android:id="@+id/action_createNotesFragment_to_homeFragment"
+            app:popUpTo="@+id/homeFragment"
+            app:popUpToInclusive="true"
+            app:destination="@id/homeFragment" />
+    </fragment>
+</navigation>
+
+<!--old navigation without backstack control-->
+<!--<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigator"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.karlebhai.ui.Fragments.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_createNotesFragment"
+            app:destination="@id/createNotesFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out" />
+        <action
+            android:id="@+id/action_homeFragment_to_editFragment"
+            app:destination="@id/editFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/editFragment"
+        android:name="com.example.karlebhai.ui.Fragments.EditFragment"
+        android:label="fragment_edit"
+        tools:layout="@layout/fragment_edit" >
+        <action
+            android:id="@+id/action_editFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
         <argument
             android:name="data"
@@ -41,4 +91,4 @@
             android:id="@+id/action_createNotesFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
     </fragment>
-</navigation>
+</navigation>-->

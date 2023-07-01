@@ -27,6 +27,19 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
+        <androidx.appcompat.widget.SearchView
+            android:id="@+id/searchView2"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/etbg"
+            app:iconifiedByDefault="false"
+            app:queryHint="Search"
+            android:theme="@style/ThemeOverlay.SearchView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
         <LinearLayout
             android:id="@+id/linearLayout2"
             android:layout_width="match_parent"
@@ -34,75 +47,71 @@
             android:layout_marginStart="10dp"
             android:layout_marginEnd="10dp"
             android:layout_marginTop="10dp"
-
             android:gravity="center_vertical"
             android:orientation="horizontal"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView2">
+            app:layout_constraintTop_toBottomOf="@+id/searchView2">
 
             <TextView
                 android:id="@+id/allNotes"
                 android:layout_width="80dp"
                 android:layout_height="wrap_content"
-                android:text="All Notes"
-                android:padding="5dp"
-                android:fontFamily="@font/poppins_semibold"
-                android:background="@drawable/filterbgh"
-                android:textSize="15sp"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="1dp"
                 android:layout_marginBottom="1dp"
-                android:textColor="@color/red_dot"
+                android:background="@drawable/filterbgh"
+                android:fontFamily="@font/poppins_semibold"
                 android:gravity="center"
-                />
+                android:padding="5dp"
+                android:text="All Notes"
+                android:textColor="@color/red_dot"
+                android:textSize="15sp" />
 
             <TextView
                 android:id="@+id/highPriority"
                 android:layout_width="70dp"
                 android:layout_height="wrap_content"
-                android:text="High"
-                android:padding="5dp"
-                android:fontFamily="@font/poppins_semibold"
-                android:background="@drawable/filterbgh"
-                android:textSize="15sp"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="1dp"
                 android:layout_marginBottom="1dp"
-                android:textColor="@color/red_dot"
+                android:background="@drawable/filterbgh"
+                android:fontFamily="@font/poppins_semibold"
                 android:gravity="center"
-                />
+                android:padding="5dp"
+                android:text="High"
+                android:textColor="@color/red_dot"
+                android:textSize="15sp" />
+
             <TextView
                 android:id="@+id/mediumPriority"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Medium"
-                android:padding="5dp"
-                android:fontFamily="@font/poppins_semibold"
-                android:textSize="15sp"
-                android:background="@drawable/filterbgh"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="1dp"
                 android:layout_marginBottom="1dp"
-                android:textColor="@color/yellowtext"
+                android:background="@drawable/filterbgh"
+                android:fontFamily="@font/poppins_semibold"
                 android:gravity="center"
-                />
+                android:padding="5dp"
+                android:text="Medium"
+                android:textColor="@color/yellowtext"
+                android:textSize="15sp" />
 
             <TextView
                 android:id="@+id/lowPriority"
                 android:layout_width="70dp"
                 android:layout_height="wrap_content"
-                android:text="Low"
-                android:padding="5dp"
-                android:fontFamily="@font/poppins_semibold"
-                android:textSize="15sp"
-                android:background="@drawable/filterbgh"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="1dp"
                 android:layout_marginBottom="1dp"
-                android:textColor="@color/green_dot"
+                android:background="@drawable/filterbgh"
+                android:fontFamily="@font/poppins_semibold"
                 android:gravity="center"
-                />
+                android:padding="5dp"
+                android:text="Low"
+                android:textColor="@color/green_dot"
+                android:textSize="15sp" />
 
         </LinearLayout>
 

@@ -2,6 +2,7 @@ package com.example.karlebhai
 
 import android.graphics.Color
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
@@ -14,6 +15,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        window.setNavigationBarColor(Color.WHITE)
 
 
         navController = findNavController(R.id.fragmentContainerView) // got the navigation controller here
@@ -24,4 +26,7 @@ class MainActivity : AppCompatActivity() {
     override fun onNavigateUp(): Boolean {
         return navController.navigateUp() || super.onNavigateUp()
     }
+
+
+
 }

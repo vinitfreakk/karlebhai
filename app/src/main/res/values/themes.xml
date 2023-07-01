@@ -7,7 +7,7 @@
         <item name="android:textColorPrimary">@color/white</item>
         <item name="android:statusBarColor">@color/mainColor</item>
         <item name="actionBarSize">48dp</item>
-
+        <item name="android:navigationBarColor">@color/mainColor</item>
 
 
 

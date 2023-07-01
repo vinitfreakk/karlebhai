@@ -23,7 +23,7 @@
             android:fontFamily="@font/poppins_semibold"
             android:text="Add Notes"
             android:textColor="@color/mainColor"
-            android:textSize="30sp"
+            android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
